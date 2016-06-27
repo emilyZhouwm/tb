@@ -16,7 +16,7 @@
     BOOL _isDetail;
     BOOL _isDetailFromRight;
 }
- 
+
 @property (strong, nonatomic) SizeController *vc;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftLayout;
@@ -40,16 +40,18 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     _rightTipLbl.text = @"滑\n动\n查\n看\n图\n文\n详\n情";
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-    
+
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -87,21 +89,23 @@
             _rightTipLbl.text = @"滑\n动\n查\n看\n图\n文\n详\n情";
         }
     } else if (scrollView == _detailScrollView) {
-        if (scrollView.contentOffset.y < 0) {
-            if (scrollView.contentOffset.y < -30) {
-                _detailTipLbl.alpha = 1;
+        if (_isDetail) {
+            if (scrollView.contentOffset.y < 0) {
+                if (scrollView.contentOffset.y < -30) {
+                    _detailTipLbl.alpha = 1;
+                } else {
+                    _detailTipLbl.alpha = -scrollView.contentOffset.y / 30.0f;
+                }
             } else {
-                _detailTipLbl.alpha = -scrollView.contentOffset.y / 30.0f;
+                _detailTipLbl.alpha = 0;
             }
-        } else {
-            _detailTipLbl.alpha = 0;
-        }
-        if (scrollView.contentOffset.y < -40) {
-            _detailTipLbl.text = @"释放，返回宝贝详情";
-            _detailTipTopLayout.constant = 55 - 40 - scrollView.contentOffset.y;
-        } else {
-            _detailTipLbl.text = @"下拉，返回宝贝详情";
-            _detailTipTopLayout.constant = 55;
+            if (scrollView.contentOffset.y < -40) {
+                _detailTipLbl.text = @"释放，返回宝贝详情";
+                _detailTipTopLayout.constant = 55 - 40 - scrollView.contentOffset.y;
+            } else {
+                _detailTipLbl.text = @"下拉，返回宝贝详情";
+                _detailTipTopLayout.constant = 55;
+            }
         }
     }
 }
@@ -200,7 +204,6 @@
     }];
 }
 
-
 - (void)changeNav
 {
     if (_alphaCur == _alpha) {
@@ -221,69 +224,69 @@
 {
     _vc = [SizeController getVC];
     _vc.delegate = self;
-    
+
     CGRect frame = self.view.bounds;
     frame.origin.y = frame.size.height;
     _vc.view.frame = frame;
     frame.origin.y = 0;
     [[[UIApplication sharedApplication].windows firstObject] addSubview:_vc.view];
-    
+
     CATransform3D t1 = [self firstTransform];
     CATransform3D t2 = [self secondTransformWithView:self.view];
-    
+
     [UIView animateKeyframesWithDuration:0.8f
                                    delay:0.0
                                  options:UIViewKeyframeAnimationOptionCalculationModeCubic
                               animations:^{
-                                  [UIView addKeyframeWithRelativeStartTime:0.3f relativeDuration:0.6f animations:^{
-                                      self.view.layer.transform = t1;
-                                      self.view.alpha = 0.6;
-                                  }];
-                                  [UIView addKeyframeWithRelativeStartTime:0.5f relativeDuration:0.5f animations:^{
-                                      self.view.layer.transform = t2;
-                                  }];
-                                  
-                                  [UIView addKeyframeWithRelativeStartTime:0.0f relativeDuration:0.1f animations:^{
-                                      _vc.view.frame = CGRectOffset(_vc.view.frame, 0.0, -30.0);
-                                  }];
-                                  [UIView addKeyframeWithRelativeStartTime:0.1f relativeDuration:0.9f animations:^{
-                                      _vc.view.frame = frame;
-                                  }];
-                              } completion:nil];
+        [UIView addKeyframeWithRelativeStartTime:0.3f relativeDuration:0.5f animations:^{
+            self.view.layer.transform = t1;
+            self.view.alpha = 0.6;
+        }];
+        [UIView addKeyframeWithRelativeStartTime:0.4f relativeDuration:0.4f animations:^{
+            self.view.layer.transform = t2;
+        }];
+
+        [UIView addKeyframeWithRelativeStartTime:0.0f relativeDuration:0.1f animations:^{
+            _vc.view.frame = CGRectOffset(_vc.view.frame, 0.0, -10.0);
+        }];
+        [UIView addKeyframeWithRelativeStartTime:0.1f relativeDuration:0.9f animations:^{
+            _vc.view.frame = frame;
+        }];
+    } completion:nil];
 }
 
 - (void)hideBtnAcion
 {
     CGRect frame = _vc.view.frame;
     self.view.frame = frame;
-    CATransform3D t2 = [self secondTransformWithView:self.view];
+    CATransform3D t2 = [self secondTransformWithView:_vc.view];
     self.view.layer.transform = t2;
     self.view.alpha = 0.6;
-    
+
     CGRect frameOffScreen = frame;
     frameOffScreen.origin.y = frame.size.height;
-    
+
     CATransform3D t1 = [self firstTransform];
-    
+
     [UIView animateKeyframesWithDuration:0.8f
                                    delay:0
                                  options:UIViewKeyframeAnimationOptionCalculationModeCubic
                               animations:^{
-                                  [UIView addKeyframeWithRelativeStartTime:0.0f relativeDuration:1.0f animations:^{
-                                      _vc.view.frame = frameOffScreen;
-                                  }];
-                                  
-                                  [UIView addKeyframeWithRelativeStartTime:0.0f relativeDuration:0.2f animations:^{
-                                      self.view.layer.transform = t1;
-                                      self.view.alpha = 1.0;
-                                  }];
-                                  [UIView addKeyframeWithRelativeStartTime:0.2f relativeDuration:0.5f animations:^{
-                                      self.view.layer.transform = CATransform3DIdentity;
-                                  }];
-                              } completion:^(BOOL finished) {
-                                  [_vc.view removeFromSuperview];
-                                  _vc = nil;
-                              }];
+        [UIView addKeyframeWithRelativeStartTime:0.0f relativeDuration:0.8f animations:^{
+            _vc.view.frame = frameOffScreen;
+        }];
+
+        [UIView addKeyframeWithRelativeStartTime:0.0f relativeDuration:0.2f animations:^{
+            self.view.layer.transform = t1;
+            self.view.alpha = 1.0;
+        }];
+        [UIView addKeyframeWithRelativeStartTime:0.2f relativeDuration:0.5f animations:^{
+            self.view.layer.transform = CATransform3DIdentity;
+        }];
+    } completion:^(BOOL finished) {
+        [_vc.view removeFromSuperview];
+        _vc = nil;
+    }];
 }
 
 - (CATransform3D)firstTransform
@@ -299,9 +302,9 @@
 {
     CATransform3D t2 = CATransform3DIdentity;
     t2.m34 = 1.0 / -900;
-    t2 = CATransform3DTranslate(t2, 0, view.frame.size.height*-0.08, 0);
+    t2 = CATransform3DTranslate(t2, 0, view.frame.size.height* -0.08, 0);
     t2 = CATransform3DScale(t2, 0.8, 0.8, 1);
-    
+
     return t2;
 }
 
