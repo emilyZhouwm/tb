@@ -89,7 +89,7 @@
             _rightTipLbl.text = @"滑\n动\n查\n看\n图\n文\n详\n情";
         }
     } else if (scrollView == _detailScrollView) {
-        if (_isDetail) {
+        if (!_isDetailFromRight) {
             if (scrollView.contentOffset.y < 0) {
                 if (scrollView.contentOffset.y < -30) {
                     _detailTipLbl.alpha = 1;
@@ -149,6 +149,7 @@
     _leftLayout.constant = 0;
     [self.view setNeedsLayout];
     _alpha = 1;
+    _detailTipLbl.alpha = 0;
     [UIView animateWithDuration:0.3 animations:^{
         [self.view layoutIfNeeded];
         [self changeNav];
