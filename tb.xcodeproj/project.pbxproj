@@ -16,6 +16,7 @@
 		3AD6C1681D1F7F13007ED932 /* SizeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6C1671D1F7F13007ED932 /* SizeController.m */; };
 		3AD6C16B1D1F94E0007ED932 /* ShopController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6C16A1D1F94E0007ED932 /* ShopController.m */; };
 		EB3AE66B1D212E3400B15B30 /* NSObject+CardTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3AE66A1D212E3400B15B30 /* NSObject+CardTransform.m */; };
+		EB49CEED1D222214002207B6 /* UIView+CardTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = EB49CEEC1D222214002207B6 /* UIView+CardTransform.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		3AD6C16A1D1F94E0007ED932 /* ShopController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopController.m; sourceTree = "<group>"; };
 		EB3AE6691D212E3400B15B30 /* NSObject+CardTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CardTransform.h"; sourceTree = "<group>"; };
 		EB3AE66A1D212E3400B15B30 /* NSObject+CardTransform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CardTransform.m"; sourceTree = "<group>"; };
+		EB49CEEB1D222214002207B6 /* UIView+CardTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CardTransform.h"; sourceTree = "<group>"; };
+		EB49CEEC1D222214002207B6 /* UIView+CardTransform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CardTransform.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +74,8 @@
 				3AC11E821D1E805900F6942B /* AppDelegate.m */,
 				EB3AE6691D212E3400B15B30 /* NSObject+CardTransform.h */,
 				EB3AE66A1D212E3400B15B30 /* NSObject+CardTransform.m */,
+				EB49CEEB1D222214002207B6 /* UIView+CardTransform.h */,
+				EB49CEEC1D222214002207B6 /* UIView+CardTransform.m */,
 				3AC11E841D1E805900F6942B /* ViewController.h */,
 				3AC11E851D1E805900F6942B /* ViewController.m */,
 				3AD6C1661D1F7F13007ED932 /* SizeController.h */,
@@ -166,6 +171,7 @@
 			files = (
 				3AD6C1681D1F7F13007ED932 /* SizeController.m in Sources */,
 				3AC11E861D1E805900F6942B /* ViewController.m in Sources */,
+				EB49CEED1D222214002207B6 /* UIView+CardTransform.m in Sources */,
 				3AC11E831D1E805900F6942B /* AppDelegate.m in Sources */,
 				3AD6C16B1D1F94E0007ED932 /* ShopController.m in Sources */,
 				EB3AE66B1D212E3400B15B30 /* NSObject+CardTransform.m in Sources */,

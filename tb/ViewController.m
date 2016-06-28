@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "SizeController.h"
-#import "NSObject+CardTransform.h"
+#import "UIView+CardTransform.h"
 
 @interface ViewController () <SizeControllerDelegate>
 {
@@ -227,12 +227,12 @@
     _vc = [SizeController getVC];
     _vc.delegate = self;
 
-    [NSObject showView:_vc.view fromView:self.view completion:nil];
+    [self.view showCard:_vc.view completion:nil];
 }
 
 - (void)hideBtnAcion
 {
-    [NSObject hideView:_vc.view toView:self.view completion:^(BOOL finished) {
+    [self.view hideCard:_vc.view completion:^(BOOL finished) {
         [_vc.view removeFromSuperview];
         _vc = nil;
     }];

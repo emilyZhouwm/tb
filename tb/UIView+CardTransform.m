@@ -1,76 +1,76 @@
 //
-//  NSObject+CardTransform.m
+//  UIView+CardTransform.m
 //  tb
 //
-//  Created by zwm on 16/6/27.
+//  Created by zwm on 16/6/28.
 //  Copyright © 2016年 周文敏. All rights reserved.
 //
 
-#import "NSObject+CardTransform.h"
+#import "UIView+CardTransform.h"
 
-@implementation NSObject (CardTransform)
+@implementation UIView (CardTransform)
 
-+ (void)showView:(UIView *)toView fromView:(UIView *)fromView completion:(void (^)(BOOL finished))completion
+- (void)showCard:(UIView *)cardView completion:(void (^)(BOOL finished))completion
 {
-    CGRect frame = fromView.bounds;
+    CGRect frame = self.bounds;
     frame.origin.y = frame.size.height;
-    toView.frame = frame;
+    cardView.frame = frame;
     frame.origin.y = 0;
-    [[[UIApplication sharedApplication].windows firstObject] addSubview:toView];
+    [[[UIApplication sharedApplication].windows firstObject] addSubview:cardView];
 
-    CATransform3D t1 = [NSObject firstTransform];
-    CATransform3D t2 = [NSObject secondTransformWithView:fromView];
+    CATransform3D t1 = [self firstTransform];
+    CATransform3D t2 = [self secondTransformWithView:self];
 
     [UIView animateKeyframesWithDuration:0.8f
                                    delay:0.0
                                  options:UIViewKeyframeAnimationOptionCalculationModeCubic
                               animations:^{
         [UIView addKeyframeWithRelativeStartTime:0.1f relativeDuration:0.5f animations:^{
-            fromView.layer.transform = t1;
-            fromView.alpha = 0.6;
+            self.layer.transform = t1;
+            self.alpha = 0.6;
         }];
         [UIView addKeyframeWithRelativeStartTime:0.6f relativeDuration:0.2f animations:^{
-            fromView.layer.transform = t2;
+            self.layer.transform = t2;
         }];
 
         [UIView addKeyframeWithRelativeStartTime:0.0f relativeDuration:1.0f animations:^{
-            toView.frame = frame;
+            cardView.frame = frame;
         }];
     } completion:completion];
 }
 
-+ (void)hideView:(UIView *)fromView toView:(UIView *)toView completion:(void (^)(BOOL finished))completion
+- (void)hideCard:(UIView *)cardView completion:(void (^)(BOOL finished))completion
 {
-    CGRect frame = fromView.frame;
-    toView.frame = frame;
-    CATransform3D t2 = [NSObject secondTransformWithView:fromView];
-    toView.layer.transform = t2;
-    toView.alpha = 0.6;
+    CGRect frame = cardView.frame;
+    self.frame = frame;
+    CATransform3D t2 = [self secondTransformWithView:cardView];
+    self.layer.transform = t2;
+    self.alpha = 0.6;
 
     CGRect frameOffScreen = frame;
     frameOffScreen.origin.y = frame.size.height;
 
-    CATransform3D t1 = [NSObject firstTransform];
+    CATransform3D t1 = [self firstTransform];
 
     [UIView animateKeyframesWithDuration:0.8f
                                    delay:0
                                  options:UIViewKeyframeAnimationOptionCalculationModeCubic
                               animations:^{
         [UIView addKeyframeWithRelativeStartTime:0.0f relativeDuration:0.8f animations:^{
-            fromView.frame = frameOffScreen;
+            cardView.frame = frameOffScreen;
         }];
 
         [UIView addKeyframeWithRelativeStartTime:0.0f relativeDuration:0.2f animations:^{
-            toView.layer.transform = t1;
-            toView.alpha = 1.0;
+            self.layer.transform = t1;
+            self.alpha = 1.0;
         }];
         [UIView addKeyframeWithRelativeStartTime:0.2f relativeDuration:0.5f animations:^{
-            toView.layer.transform = CATransform3DIdentity;
+            self.layer.transform = CATransform3DIdentity;
         }];
     } completion:completion];
 }
 
-+ (CATransform3D)firstTransform
+- (CATransform3D)firstTransform
 {
     CATransform3D t1 = CATransform3DIdentity;
     t1.m34 = 1.0 / -900;
@@ -79,7 +79,7 @@
     return t1;
 }
 
-+ (CATransform3D)secondTransformWithView:(UIView *)view
+- (CATransform3D)secondTransformWithView:(UIView *)view
 {
     CATransform3D t2 = CATransform3DIdentity;
     t2.m34 = 1.0 / -900;
