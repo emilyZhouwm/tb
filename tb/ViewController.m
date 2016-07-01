@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "SizeController.h"
 #import "UIView+CardTransform.h"
+#import "FootController.h"
 
 @interface ViewController () <SizeControllerDelegate>
 {
@@ -31,11 +32,16 @@
 @property (weak, nonatomic) IBOutlet UIView *headView;
 @property (weak, nonatomic) IBOutlet UIView *headLine;
 @property (weak, nonatomic) IBOutlet UIButton *backBtn;
+
+@property (weak, nonatomic) IBOutlet UIView *detailView;
 @property (weak, nonatomic) IBOutlet UILabel *detailTipLbl;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *detailTipTopLayout;
+
 @property (weak, nonatomic) IBOutlet UILabel *rightTipLbl;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *rightTipLeftLayout;
-@property (weak, nonatomic) IBOutlet UIView *detailView;
+
+@property (weak, nonatomic) IBOutlet UILabel *backTipLbl;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *backTipBottomLayout;
 
 @end
 
@@ -61,8 +67,15 @@
     if (scrollView == _backScrollView) {
         if (scrollView.contentOffset.y > 0) {
             _headTopLayout.constant = scrollView.contentOffset.y * 0.5;
+            _backTipBottomLayout.constant = 0;
         } else {
             _headTopLayout.constant = 0;
+            _backTipBottomLayout.constant = scrollView.contentOffset.y;
+            if (scrollView.contentOffset.y < -40) {
+                _backTipLbl.text = @"释放查看更多精彩";
+            } else {
+                _backTipLbl.text = @"下拉查看更多精彩";
+            }
         }
         if (scrollView.contentOffset.y > _headScrollView.frame.size.height - 64) {
             _alpha = 1;
@@ -116,6 +129,8 @@
     if (scrollView == _backScrollView) {
         if (scrollView.contentOffset.y + scrollView.frame.size.height - scrollView.contentSize.height > 40) {
             [self showDetail];
+        } else if (scrollView.contentOffset.y < -40) {
+            [self showFoot];
         }
     } else if (scrollView == _detailScrollView) {
         if (_isDetail && scrollView.contentOffset.y < -40) {
@@ -214,6 +229,11 @@
     _alphaCur = _alpha;
     _headView.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:_alphaCur];
     _headLine.backgroundColor = [UIColor colorWithRed:234/255.0 green:234/255.0 blue:234/255.0 alpha:_alphaCur];
+}
+
+- (void)showFoot
+{
+    [FootController showFootToVC:self];
 }
 
 #pragma mark - action
