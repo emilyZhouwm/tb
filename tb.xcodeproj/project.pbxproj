@@ -15,6 +15,9 @@
 		3AC11E8E1D1E805900F6942B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AC11E8C1D1E805900F6942B /* LaunchScreen.storyboard */; };
 		3AD6C1681D1F7F13007ED932 /* SizeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6C1671D1F7F13007ED932 /* SizeController.m */; };
 		3AD6C16B1D1F94E0007ED932 /* ShopController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD6C16A1D1F94E0007ED932 /* ShopController.m */; };
+		EB2F20781D2B603F00A2A6B9 /* WMCardScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F20771D2B603F00A2A6B9 /* WMCardScrollView.m */; };
+		EB2F207B1D2B850500A2A6B9 /* WMCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F207A1D2B850500A2A6B9 /* WMCardView.m */; };
+		EB2F207D1D2B851E00A2A6B9 /* WMCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB2F207C1D2B851E00A2A6B9 /* WMCardView.xib */; };
 		EB3AE66B1D212E3400B15B30 /* NSObject+CardTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3AE66A1D212E3400B15B30 /* NSObject+CardTransform.m */; };
 		EB49CEED1D222214002207B6 /* UIView+CardTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = EB49CEEC1D222214002207B6 /* UIView+CardTransform.m */; };
 		EBAFF1801D228984003C1AC7 /* FootController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAFF17F1D228984003C1AC7 /* FootController.m */; };
@@ -36,6 +39,11 @@
 		3AD6C1671D1F7F13007ED932 /* SizeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SizeController.m; sourceTree = "<group>"; };
 		3AD6C1691D1F94E0007ED932 /* ShopController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopController.h; sourceTree = "<group>"; };
 		3AD6C16A1D1F94E0007ED932 /* ShopController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopController.m; sourceTree = "<group>"; };
+		EB2F20761D2B603F00A2A6B9 /* WMCardScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMCardScrollView.h; sourceTree = "<group>"; };
+		EB2F20771D2B603F00A2A6B9 /* WMCardScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMCardScrollView.m; sourceTree = "<group>"; };
+		EB2F20791D2B850500A2A6B9 /* WMCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMCardView.h; sourceTree = "<group>"; };
+		EB2F207A1D2B850500A2A6B9 /* WMCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMCardView.m; sourceTree = "<group>"; };
+		EB2F207C1D2B851E00A2A6B9 /* WMCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WMCardView.xib; sourceTree = "<group>"; };
 		EB3AE6691D212E3400B15B30 /* NSObject+CardTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CardTransform.h"; sourceTree = "<group>"; };
 		EB3AE66A1D212E3400B15B30 /* NSObject+CardTransform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CardTransform.m"; sourceTree = "<group>"; };
 		EB49CEEB1D222214002207B6 /* UIView+CardTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CardTransform.h"; sourceTree = "<group>"; };
@@ -90,6 +98,11 @@
 				3AD6C16A1D1F94E0007ED932 /* ShopController.m */,
 				EBAFF17E1D228984003C1AC7 /* FootController.h */,
 				EBAFF17F1D228984003C1AC7 /* FootController.m */,
+				EB2F20761D2B603F00A2A6B9 /* WMCardScrollView.h */,
+				EB2F20771D2B603F00A2A6B9 /* WMCardScrollView.m */,
+				EB2F20791D2B850500A2A6B9 /* WMCardView.h */,
+				EB2F207A1D2B850500A2A6B9 /* WMCardView.m */,
+				EB2F207C1D2B851E00A2A6B9 /* WMCardView.xib */,
 				EBAFF1811D22A2B6003C1AC7 /* WMCarouselLayout.h */,
 				EBAFF1821D22A2B6003C1AC7 /* WMCarouselLayout.m */,
 				3AC11E871D1E805900F6942B /* Main.storyboard */,
@@ -166,6 +179,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB2F207D1D2B851E00A2A6B9 /* WMCardView.xib in Resources */,
 				3AC11E8E1D1E805900F6942B /* LaunchScreen.storyboard in Resources */,
 				3AC11E8B1D1E805900F6942B /* Assets.xcassets in Resources */,
 				3AC11E891D1E805900F6942B /* Main.storyboard in Resources */,
@@ -182,7 +196,9 @@
 				3AD6C1681D1F7F13007ED932 /* SizeController.m in Sources */,
 				3AC11E861D1E805900F6942B /* ViewController.m in Sources */,
 				EB49CEED1D222214002207B6 /* UIView+CardTransform.m in Sources */,
+				EB2F20781D2B603F00A2A6B9 /* WMCardScrollView.m in Sources */,
 				EBAFF1831D22A2B6003C1AC7 /* WMCarouselLayout.m in Sources */,
+				EB2F207B1D2B850500A2A6B9 /* WMCardView.m in Sources */,
 				3AC11E831D1E805900F6942B /* AppDelegate.m in Sources */,
 				3AD6C16B1D1F94E0007ED932 /* ShopController.m in Sources */,
 				EB3AE66B1D212E3400B15B30 /* NSObject+CardTransform.m in Sources */,
