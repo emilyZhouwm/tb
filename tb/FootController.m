@@ -76,7 +76,7 @@
 
 - (void)cardCurrentIndex:(NSInteger)index
 {
-    _indexLbl.text = [NSString stringWithFormat:@" ( %li / %i )", index + 1, 20];
+    _indexLbl.text = [NSString stringWithFormat:@" ( %zd / %i )", index + 1, 20];
 }
 
 #pragma mark - action
@@ -102,26 +102,6 @@
         [self.view layoutIfNeeded];
         _hideBtn.alpha = 1;
     }];
-}
-
-#pragma mark - UICollectionViewDelegate / UICollectionViewDataSource
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
-    return 20;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    //cell.intrinsicContentSize
-    return cell;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
-
-
 }
 
 @end

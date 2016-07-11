@@ -18,10 +18,8 @@
 		EB2F20781D2B603F00A2A6B9 /* WMCardScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F20771D2B603F00A2A6B9 /* WMCardScrollView.m */; };
 		EB2F207B1D2B850500A2A6B9 /* WMCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F207A1D2B850500A2A6B9 /* WMCardView.m */; };
 		EB2F207D1D2B851E00A2A6B9 /* WMCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB2F207C1D2B851E00A2A6B9 /* WMCardView.xib */; };
-		EB3AE66B1D212E3400B15B30 /* NSObject+CardTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3AE66A1D212E3400B15B30 /* NSObject+CardTransform.m */; };
 		EB49CEED1D222214002207B6 /* UIView+CardTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = EB49CEEC1D222214002207B6 /* UIView+CardTransform.m */; };
 		EBAFF1801D228984003C1AC7 /* FootController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAFF17F1D228984003C1AC7 /* FootController.m */; };
-		EBAFF1831D22A2B6003C1AC7 /* WMCarouselLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = EBAFF1821D22A2B6003C1AC7 /* WMCarouselLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,14 +42,10 @@
 		EB2F20791D2B850500A2A6B9 /* WMCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMCardView.h; sourceTree = "<group>"; };
 		EB2F207A1D2B850500A2A6B9 /* WMCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMCardView.m; sourceTree = "<group>"; };
 		EB2F207C1D2B851E00A2A6B9 /* WMCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WMCardView.xib; sourceTree = "<group>"; };
-		EB3AE6691D212E3400B15B30 /* NSObject+CardTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CardTransform.h"; sourceTree = "<group>"; };
-		EB3AE66A1D212E3400B15B30 /* NSObject+CardTransform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CardTransform.m"; sourceTree = "<group>"; };
 		EB49CEEB1D222214002207B6 /* UIView+CardTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CardTransform.h"; sourceTree = "<group>"; };
 		EB49CEEC1D222214002207B6 /* UIView+CardTransform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CardTransform.m"; sourceTree = "<group>"; };
 		EBAFF17E1D228984003C1AC7 /* FootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FootController.h; sourceTree = "<group>"; };
 		EBAFF17F1D228984003C1AC7 /* FootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FootController.m; sourceTree = "<group>"; };
-		EBAFF1811D22A2B6003C1AC7 /* WMCarouselLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMCarouselLayout.h; sourceTree = "<group>"; };
-		EBAFF1821D22A2B6003C1AC7 /* WMCarouselLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMCarouselLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +80,6 @@
 			children = (
 				3AC11E811D1E805900F6942B /* AppDelegate.h */,
 				3AC11E821D1E805900F6942B /* AppDelegate.m */,
-				EB3AE6691D212E3400B15B30 /* NSObject+CardTransform.h */,
-				EB3AE66A1D212E3400B15B30 /* NSObject+CardTransform.m */,
 				EB49CEEB1D222214002207B6 /* UIView+CardTransform.h */,
 				EB49CEEC1D222214002207B6 /* UIView+CardTransform.m */,
 				3AC11E841D1E805900F6942B /* ViewController.h */,
@@ -103,8 +95,6 @@
 				EB2F20791D2B850500A2A6B9 /* WMCardView.h */,
 				EB2F207A1D2B850500A2A6B9 /* WMCardView.m */,
 				EB2F207C1D2B851E00A2A6B9 /* WMCardView.xib */,
-				EBAFF1811D22A2B6003C1AC7 /* WMCarouselLayout.h */,
-				EBAFF1821D22A2B6003C1AC7 /* WMCarouselLayout.m */,
 				3AC11E871D1E805900F6942B /* Main.storyboard */,
 				3AC11E8A1D1E805900F6942B /* Assets.xcassets */,
 				3AC11E8C1D1E805900F6942B /* LaunchScreen.storyboard */,
@@ -197,11 +187,9 @@
 				3AC11E861D1E805900F6942B /* ViewController.m in Sources */,
 				EB49CEED1D222214002207B6 /* UIView+CardTransform.m in Sources */,
 				EB2F20781D2B603F00A2A6B9 /* WMCardScrollView.m in Sources */,
-				EBAFF1831D22A2B6003C1AC7 /* WMCarouselLayout.m in Sources */,
 				EB2F207B1D2B850500A2A6B9 /* WMCardView.m in Sources */,
 				3AC11E831D1E805900F6942B /* AppDelegate.m in Sources */,
 				3AD6C16B1D1F94E0007ED932 /* ShopController.m in Sources */,
-				EB3AE66B1D212E3400B15B30 /* NSObject+CardTransform.m in Sources */,
 				3AC11E801D1E805900F6942B /* main.m in Sources */,
 				EBAFF1801D228984003C1AC7 /* FootController.m in Sources */,
 			);
@@ -266,7 +254,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -305,7 +293,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -318,6 +306,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = tb/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zwm.tb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -329,6 +318,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = tb/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zwm.tb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
