@@ -17,4 +17,9 @@
     return cardView;
 }
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+}
+
 @end

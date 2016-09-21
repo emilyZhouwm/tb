@@ -98,6 +98,7 @@
 
         [self updateCard:card withProgress:1 direction:WMCardMoveNone];
     }
+    [_scrollView layoutIfNeeded];
 }
 
 - (NSInteger)currentIndex
